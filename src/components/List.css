@@ -1,0 +1,18 @@
+form,
+ul,
+li {
+  display: flex;
+  gap: 8px;
+}
+
+ul {
+  flex-direction: column;
+  list-style: none;
+}
+
+ul,
+form {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 16px;
+}
