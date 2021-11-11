@@ -1,6 +1,7 @@
 form,
 ul,
-li {
+li,
+span {
   display: flex;
   gap: 8px;
 }
@@ -10,9 +11,18 @@ ul {
   list-style: none;
 }
 
-ul,
-form {
+li {
+  justify-content: space-between;
+}
+
+section,
+form,
+ul {
+  padding: 16px;
+}
+
+section {
   border: 2px solid black;
   border-radius: 8px;
-  padding: 16px;
+  /* backdrop-filter: blur(10px); */
 }

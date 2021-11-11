@@ -16,10 +16,20 @@ export default function List() {
     setElement("");
   }
 
+  function handleRemoval(index: number): void {
+    setList(
+      [...list].filter(function (item) {
+        return item !== list[index];
+      })
+    );
+  }
+
   return (
     <section>
       <form onSubmit={handleSubmit} className="form">
-        <label htmlFor="input">Input: </label>
+        <label htmlFor="input">
+          <b>Input: </b>
+        </label>
         <input
           id="input"
           type="text"
@@ -30,14 +40,20 @@ export default function List() {
         <button>Add</button>
       </form>
 
-      <ul>
-        {list.map((l, index) => (
-          <li key={index}>
-            <input type="checkbox" />
-            <label>{l}</label>
-          </li>
-        ))}
-      </ul>
+      {list.length > 0 && (
+        <ul>
+          {list.map((l, index) => (
+            <li key={l}>
+              <span>
+                <input type="checkbox" />
+                <label>{l}</label>
+              </span>
+
+              <button onClick={(e) => handleRemoval(index)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }
